@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  handbrake:
+    build: .
+    volumes:
+      - /home/kanata/raw:/mnt/raw:ro
+      - /home/kanata/encoded:/mnt/encoded
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
